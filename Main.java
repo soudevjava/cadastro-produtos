@@ -1,4 +1,7 @@
-import service.AtualizarProduto;
+
+import src.service.AtualizarProduto;
+import src.vo.Produto;
+
 
 public class Main {
     public static void main(String[] args) {
