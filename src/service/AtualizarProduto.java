@@ -1,9 +1,11 @@
-package service;
+package src.service;
 
-import vo.Produto;
+
+import src.vo.Produto;
 
 public class AtualizarProduto {
     public void atualizar(Produto produto, String nome, String descricao, Double preco, Integer quantidade){
+
         if(produto != null){
             produto.setNome(nome);
             produto.setDescricao(descricao);
