@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d649639c-365a-44cf-9e6d-0bb6c3b030d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro-produtos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro-produtos/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro-produtos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro-produtos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro-produtos/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cadastro-produtos/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cadastro-produtos/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/AtualizarProduto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vo/Produto.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,13 +57,18 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre" />
-      <option name="MAIN_CLASS_NAME" value="main" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="cadastro-produtos" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
