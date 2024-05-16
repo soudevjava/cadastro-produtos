@@ -1,10 +1,10 @@
 package soudevjava;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import soudevjava.dao.ProdutoDAO;
 import soudevjava.model.Produto;
 
 /*
@@ -14,57 +14,66 @@ import soudevjava.model.Produto;
  */
 
 public class CadastroProdutoApplication {
+	static Scanner read = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Locale.setDefault(Locale.CANADA);
-		Scanner read = new Scanner(System.in);
-		List<Produto> produtos = new ArrayList<>();
-
-		System.out.println("### Product Registration ###\n");
-		System.out.print("Enter 1 - Add | 0 - End: ");
-		int op = read.nextInt();
-
-		while (op != 0) {
-
-			System.out.println();
-			read.nextLine();
-
-			System.out.print("Enter a product name: ");
-			String name = read.nextLine().trim();
-
-			System.out.print("Enter a description: ");
-			String description = read.nextLine().trim();
-
-			System.out.print("Enter a price: ");
-			Double price = read.nextDouble();
-
-			System.out.print("Enter a quantity: ");
-			Integer quantity = read.nextInt();
-
-			Produto produto = new Produto(name, description, price, quantity);
-
-			produtos.add(produto);
-
-			System.err.println("\nProduct registration successfully!");
-			System.out.println("");
-
-			System.out.print("Continue? 1 - Yes | 0 - No: ");
-			op = read.nextInt();
-
-		}
-
-		System.out.println("");
-
-		if (!produtos.isEmpty()) {
-			System.err.println("ALL REGISTRATION PRODUCTS");
-			for (Produto produto : produtos) {
-				System.out.println(produto);
-			}
-		}
-
-		System.err.println("Thank you for visiting our system!");
-
-		read.close();
+		menu();
 	}
 
+	static void menu() {
+		Locale.setDefault(Locale.CANADA);
+		int op;
+		do {
+			System.out.println("\n### Product Registration ###\n");
+			System.out.print("\n 1 - Add Product \n 2 - Find All Product \n 0 - End \n : ");
+			op = read.nextInt();
+			read.nextLine();
+
+			switch (op) {
+			case 1:
+				addProduct();
+				break;
+			case 2:
+				findAllProducts();
+				break;
+			case 0:
+				System.err.println("\nLeaving the system...");
+			default:
+				break;
+			}
+
+		} while (op != 0);
+		System.err.println("\nThe End.");
+	}
+
+	static void addProduct() {
+		System.out.println("\nPRODUCT REGISTRATION\n");
+
+		System.out.print("Enter a name: ");
+		String name = read.nextLine();
+
+		System.out.print("Enter a description: ");
+		String description = read.nextLine();
+
+		System.out.print("Enter a price: ");
+		Double price = read.nextDouble();
+
+		System.out.print("Enter a quantity: ");
+		Integer quantity = read.nextInt();
+
+		ProdutoDAO.addProduct(new Produto(name, description, price, quantity));
+
+		System.out.println("\nProduct registered successfully!");
+	}
+
+	static void findAllProducts() {
+		List<Produto> produtos = ProdutoDAO.findAll();
+		if (produtos.isEmpty()) {
+			System.err.println("\nThere are no products registred.");
+		}
+		for (Produto produto : produtos) {
+			System.out.println("\nList of products");
+			System.out.println(produto);
+		}
+	}
 }
