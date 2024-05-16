@@ -15,5 +15,14 @@ public class ProdutoDAO {
 	public static List<Produto> findAll() {
 		return new ArrayList<>(produtos);
 	}
+	
+	public static Produto findByName(String name) {
+		for (Produto produto : produtos) {
+			if (produto.getName().contains(name)) {
+				return produto;
+			}
+		}
+		return null;
+	}
 
 }

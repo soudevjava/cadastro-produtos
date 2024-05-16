@@ -25,7 +25,7 @@ public class CadastroProdutoApplication {
 		int op;
 		do {
 			System.out.println("\n### Product Registration ###\n");
-			System.out.print("\n 1 - Add Product \n 2 - Find All Product \n 0 - End \n : ");
+			System.out.print("\n 1 - Add Product \n 2 - Find All Product \n 3 - Find Product \n 0 - End \n : ");
 			op = read.nextInt();
 			read.nextLine();
 
@@ -35,6 +35,9 @@ public class CadastroProdutoApplication {
 				break;
 			case 2:
 				findAllProducts();
+				break;
+			case 3:
+				findByNameProduct();
 				break;
 			case 0:
 				System.err.println("\nLeaving the system...");
@@ -47,7 +50,7 @@ public class CadastroProdutoApplication {
 	}
 
 	static void addProduct() {
-		System.out.println("\nPRODUCT REGISTRATION\n");
+		System.out.println("\nAdd Product\n");
 
 		System.out.print("Enter a name: ");
 		String name = read.nextLine();
@@ -72,8 +75,21 @@ public class CadastroProdutoApplication {
 			System.err.println("\nThere are no products registred.");
 		}
 		for (Produto produto : produtos) {
-			System.out.println("\nList of products");
+			System.out.println("\nFind All Product");
 			System.out.println(produto);
+		}
+	}
+	
+	static void findByNameProduct() {
+		System.out.println("\nFind Product\n");
+		System.out.print("Enter a name product: ");
+		String name = read.nextLine();
+		
+		Produto produto = ProdutoDAO.findByName(name);
+		if(produto != null) {
+			System.out.println("\nProduct: "+produto);
+		}else {
+			System.out.println("\nProduct with name '"+name+"' not found.");
 		}
 	}
 }
